@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/Ime"
+        android:labelFor="@+id/txtIme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ime"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/txtIme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp"
+       />
+
+    <TextView
+        android:id="@+id/Prezime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/txtPrezime"
+        android:text="Prezime"
+        android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtPrezime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="10dp"
+            />
+        <TextView
+            android:id="@+id/DatumRodjenja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/txtPrezime"
+            android:text="Datum rodjenja"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtDatumRodjenja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_border"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:focusable="false"
+            />
+
+        <TextView
+            android:id="@+id/Adresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/txtAdresa"
+            android:text="Adresa"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtAdresa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="10dp"
+            />
+        <TextView
+            android:id="@+id/Grad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/txtAdresa"
+            android:text="Grad"
+            android:textSize="16sp" />
+        <Spinner
+            android:id="@+id/spinnerGrad"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:layout_marginBottom="10dp"
+            android:minHeight="40dp"
+            >
+        </Spinner>
+        <TextView
+            android:id="@+id/Spol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/txtAdresa"
+            android:text="Spol"
+            android:textSize="16sp" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:id="@+id/rgSpol"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/rbMusko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Musko"
+                android:layout_marginEnd="50dp"
+
+                />
+            <RadioButton android:id="@+id/rbZensko"
+                android:layout_width="wrap_content"
+                android:clickable="true"
+                android:layout_height="wrap_content"
+                android:text="Zensko"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/txtEmail"
+            android:text="Email"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/KontakTelefon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/txtKontaktTelefon"
+            android:text="Kontakt telefon"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtKontaktTelefon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/txtPassword"
+            android:text="Lozinka"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:password="true"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/KrvnaGrupa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/spinnerKrvnaGrupaRegistracija"
+            android:text="Krvna grupa"
+            android:textSize="16sp" />
+        <Spinner
+            android:id="@+id/spinnerKrvnaGrupaRegistracija"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:layout_marginBottom="10dp"
+            android:minHeight="40dp"
+            >
+        </Spinner>
+
+        <CheckBox
+            android:id="@+id/chAktivan"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Želim biti donator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimaryBloodBank"
+
+            />
+
+        <Button
+            android:id="@+id/Save"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/buttonGray"
+            android:textColor="@color/colorWhite"
+            android:text="Registracija" />
+
+    </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

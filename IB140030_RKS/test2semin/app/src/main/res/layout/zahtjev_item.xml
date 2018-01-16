@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@color/colorWhite"
+    >
+
+    <Button
+        android:id="@+id/btnKrvnaGrupaZahtjev"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/roundbutton"
+        android:text="0-"
+        android:textSize="26dp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="16dp" />
+
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/txtDatumZahtjeva"
+        android:textSize="16dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:text="27/03/2014" />
+
+    <TextView
+        android:id="@+id/txtPotvrda"
+        android:textSize="16dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDatumZahtjeva"
+        android:text="Potvrđeno: DA" />
+
+    <TextView
+        android:id="@+id/txtTransfCentar"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/txtPotvrda"
+        android:text="Banka : Banka krvi br1" />
+
+    <TextView
+        android:layout_marginTop="3dp"
+        android:id="@+id/txtKolicina"
+        android:textSize="14dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnKrvnaGrupaZahtjev"
+        android:text="0,45l" />
+
+    <View
+        android:id="@+id/shadow"
+        android:layout_width="fill_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shadow_drawable">
+    </View>
+
+    <View
+        android:id="@+id/shadow2"
+        android:layout_width="4dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/shadow_drawable">
+    </View>
+
+</RelativeLayout>

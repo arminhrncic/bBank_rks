@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageDonator"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:clickable="true"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@drawable/user_dialog" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="64dp"
+        android:layout_toEndOf="@+id/imageDonator"
+        app:srcCompat="@drawable/dose" />
+
+    <Button
+        android:id="@+id/btnKrvnaGrupaPodaci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="80dp"
+        android:height="80dp"
+        android:background="@drawable/roundbutton"
+        android:text="0-"
+        android:textSize="26dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/imageView3"
+        android:layout_toEndOf="@+id/imageDonator"
+        android:layout_marginStart="52dp" />
+
+    <RelativeLayout
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/relativeLayout"
+        android:layout_below="@+id/txtImePrezimePodaci"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="50dp">
+        <TextView
+            android:id="@+id/datumRodj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginStart="5dp"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="Datum rođenja"
+            />
+        <TextView
+            android:id="@+id/datumRodjValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="07/11/1973"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+
+        <TextView
+            android:id="@+id/emaill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:layout_marginStart="5dp"
+            android:layout_below="@+id/datumRodj"
+
+            android:layout_marginBottom="5dp"
+            android:text="Email"
+            />
+        <TextView
+            android:id="@+id/emailValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/datumRodjValue"
+
+            android:layout_marginBottom="5dp"
+            android:text="majda@live.com"
+            android:layout_alignParentEnd="true" />
+
+
+        <TextView
+            android:id="@+id/telefonn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:layout_marginStart="5dp"
+            android:layout_below="@+id/emaill"
+
+            android:layout_marginBottom="5dp"
+            android:text="Telefon"
+            />
+        <TextView
+            android:id="@+id/telefonValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/emailValue"
+
+            android:layout_marginBottom="5dp"
+            android:text="387603187651"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/adresaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:layout_marginStart="5dp"
+            android:layout_below="@+id/telefonn"
+
+            android:layout_marginBottom="5dp"
+            android:text="Adresa"
+            />
+        <TextView
+            android:id="@+id/adresaValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/telefonValue"
+
+            android:layout_marginBottom="5dp"
+            android:text="Zagrebačka BB"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/gradd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:layout_marginStart="5dp"
+            android:layout_below="@+id/adresaa"
+
+            android:layout_marginBottom="5dp"
+            android:text="Grad"
+            />
+        <TextView
+            android:id="@+id/gradValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="#000000"
+            android:layout_below="@+id/adresaValue"
+
+            android:layout_marginBottom="5dp"
+            android:text="Mostar"
+            android:layout_alignParentEnd="true" />
+
+        <CheckBox
+            android:id="@+id/checkBoxDonator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aktivan"
+            android:layout_marginStart="120dp"
+            android:textSize="20dp"
+            android:buttonTint="@color/colorPrimaryBloodBank"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/txtAdresa" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnUrediPodatke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/buttonGray"
+        android:textColor="@color/colorWhite"
+        android:text="Uredi podatke"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:id="@+id/txtImePrezimePodaci"
+        android:textSize="32dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:text="Majda Majdić"
+        android:layout_below="@+id/imageDonator"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/textViewSpasi"
+        android:visibility="invisible"
+        android:clickable="true"
+        android:textAlignment="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageDonator"
+        android:layout_marginTop="1dp"
+        android:text="Sačuvaj"
+        android:layout_alignStart="@+id/imageDonator"
+        android:layout_alignEnd="@+id/imageDonator" />
+
+
+</RelativeLayout>

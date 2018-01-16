@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    >
+
+    <ListView
+        android:id="@+id/ListViewZahtjev"
+        android:layout_width="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5.0sp"
+        android:layout_height="420dp" />
+
+    <Button
+        android:id="@+id/NoviZahtjev"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/buttonGray"
+        android:textColor="@color/colorWhite"
+        android:text="Novi zahtjev" />
+</LinearLayout>

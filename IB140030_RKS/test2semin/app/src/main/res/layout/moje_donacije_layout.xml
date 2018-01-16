@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    >
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Posljednja donacija : " />
+
+    <TextView
+        android:id="@+id/txtPosljednjaDonacija"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:text="Bez donacije"
+        android:layout_marginEnd="10dp"
+        android:layout_above="@+id/textView9"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@+id/textView7"
+        android:layout_marginTop="19dp"
+        android:text="Ukupno donirano :"
+        android:layout_alignStart="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/txtUkupnoDonirano"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 ml"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_alignStart="@+id/txtPosljednjaDonacija"
+        android:layout_marginStart="45dp" />
+    <View
+        android:id="@+id/separateLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/txtUkupnoDonirano"
+        android:background="@android:color/darker_gray"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="5.0sp"
+        android:layout_alignStart="@+id/separateLine"
+        android:layout_below="@+id/separateLine"
+        android:layout_marginTop="16dp"
+        android:id="@+id/listViewDonacije" />
+
+    <Button
+        android:id="@+id/button2donacija"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/listViewDonacije"
+        android:layout_marginTop="12dp"
+        android:background="@color/buttonGray"
+        android:textColor="@color/colorWhite"
+        android:text="Nova donacija" />
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryBloodBank">#d62e2e</color>
+    <color name="background_material_lightbloodbank">#eeeeee</color>
+    <color name="colorPrimaryDarkBloodBank">#b81d1d</color>
+    <color name="colorAccentBloodBank">#9e9e9e</color>
+    <color name="buttonGray">#9d9f9e</color>
+    <color name="colorWhite">#ffffff</color>
+</resources>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+
+    >
+
+    <Button
+        android:id="@+id/buttonApozitivna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="10dp"
+        android:width="90dp"
+        android:height="90dp"
+        android:background="@drawable/roundbutton"
+        android:text="A+"
+        android:textSize="26dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/buttonAnegativna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:width="90dp"
+        android:height="90dp"
+        android:textSize="26dp"
+        android:background="@drawable/roundbutton"
+        android:text="A-"
+        android:textColor="@color/colorWhite"
+        android:layout_alignBaseline="@+id/buttonApozitivna"
+        android:layout_alignBottom="@+id/buttonApozitivna"
+        android:layout_toEndOf="@+id/buttonApozitivna" />
+
+    <Button
+        android:id="@+id/button0poziivna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="90dp"
+        android:height="90dp"
+        android:background="@drawable/roundbutton"
+        android:text="0+"
+        android:textSize="26dp"
+        android:textColor="@color/colorWhite"
+        android:layout_alignBaseline="@+id/button0negativna"
+        android:layout_alignBottom="@+id/button0negativna"
+        android:layout_alignStart="@+id/buttonABpozitivna" />
+
+    <Button
+        android:id="@+id/buttonBpozitivna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/buttonApozitivna"
+        android:layout_below="@+id/buttonApozitivna"
+        android:layout_marginTop="17dp"
+        android:width="90dp"
+        android:height="90dp"
+        android:textSize="26dp"
+        android:background="@drawable/roundbutton"
+        android:text="B+"
+        android:textColor="@color/colorWhite" />
+
+    <Button
+        android:id="@+id/buttonABnegativna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:width="90dp"
+        android:height="90dp"
+        android:background="@drawable/roundbutton"
+        android:text="AB-"
+        android:textSize="26dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/buttonBnegativna"
+        android:layout_alignStart="@+id/buttonBnegativna" />
+
+    <Button
+        android:id="@+id/button0negativna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="90dp"
+        android:height="90dp"
+        android:background="@drawable/roundbutton"
+        android:text="0-"
+        android:textSize="26dp"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/buttonABnegativna"
+        android:layout_alignStart="@+id/buttonABnegativna"
+        android:layout_marginTop="16dp" />
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/linearLayout">
+<Spinner
+    android:id="@+id/spinnerCentar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="50dp"
+    android:minWidth="150dp"
+    >
+
+</Spinner>
+    <Spinner
+        android:id="@+id/spinnerDoza"
+        android:layout_width="wrap_content"
+        android:minWidth="150dp"
+        android:layout_height="wrap_content">
+
+    </Spinner>
+</LinearLayout>
+
+    <Button
+        android:id="@+id/buttonBnegativna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:height="90dp"
+        android:width="90dp"
+        android:background="@drawable/roundbutton"
+        android:text="B-"
+        android:textSize="26dp"
+        android:layout_alignBaseline="@+id/buttonBpozitivna"
+        android:layout_alignBottom="@+id/buttonBpozitivna"
+        android:layout_alignStart="@+id/buttonAnegativna" />
+
+    <Button
+        android:id="@+id/buttonABpozitivna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="90dp"
+        android:height="90dp"
+        android:background="@drawable/roundbutton"
+        android:text="AB+"
+        android:textSize="26dp"
+        android:textColor="@color/colorWhite"
+        android:layout_alignBaseline="@+id/buttonABnegativna"
+        android:layout_alignBottom="@+id/buttonABnegativna"
+        android:layout_alignStart="@+id/buttonBpozitivna" />
+
+    <Button
+        android:id="@+id/btnZatraziKrv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:text="Zatraži krv"
+        android:background="@color/buttonGray"
+        android:textColor="@color/colorWhite"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

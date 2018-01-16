@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/Datumdonacije"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/txtAdresa"
+        android:text="Datum donacije: "
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/txtDatumDonacije"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext_border"
+        android:drawableEnd="@drawable/picture13manjaa"
+        android:clickable="true"
+        android:editable="false"
+
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:focusable="false"
+        />
+
+    <TextView
+        android:id="@+id/VrijemeDolaska"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/txtAdresa"
+        android:text="Vrijeme dolaska : "
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/txtVrijemeDolaska"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:editable="false"
+        android:focusable="false"
+        android:drawableEnd="@drawable/picture15manjaa"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/Banka"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/txtAdresa"
+        android:text="Banka krvi: "
+        android:textSize="16sp" />
+
+
+    <Spinner
+        android:id="@+id/spinnerCentarDonacija"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext_border"
+        android:ems="10"
+        android:layout_marginBottom="10dp"
+
+        >
+    </Spinner>
+
+    <Button
+        android:id="@+id/buttonPotvrdiDonaciju"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/buttonGray"
+        android:textColor="@color/colorWhite"
+        android:text="Potvrdi" />
+
+</LinearLayout>

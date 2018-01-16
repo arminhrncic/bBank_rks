@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ImeEdit"
+                android:labelFor="@+id/txtIme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ime"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtImeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/PrezimeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txtPrezimeEdit"
+                android:text="Prezime"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtPrezimeEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:id="@+id/DatumRodjenjaEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txtPrezimeEdit"
+                android:text="Datum rodjenja"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtDatumRodjenjaEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_border"
+                android:clickable="true"
+                android:editable="false"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:focusable="false"
+                />
+
+            <TextView
+                android:id="@+id/AdresaEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txtAdresaEdit"
+                android:text="Adresa"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtAdresaEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="10dp"
+                />
+            <TextView
+                android:id="@+id/GradEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txtAdresaEdit"
+                android:text="Grad"
+                android:textSize="16sp" />
+            <Spinner
+                android:id="@+id/spinnerGradEdit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:layout_marginBottom="10dp"
+                android:minHeight="40dp"
+                >
+            </Spinner>
+            <TextView
+                android:id="@+id/SpolEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txtAdresaEdit"
+                android:text="Spol"
+                android:textSize="16sp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:id="@+id/rgSpolEdit"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+                <RadioButton android:id="@+id/rbMuskoEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:text="Musko"
+                    android:layout_marginEnd="50dp"
+
+                    />
+                <RadioButton android:id="@+id/rbZenskoEdit"
+                    android:layout_width="wrap_content"
+                    android:clickable="true"
+                    android:layout_height="wrap_content"
+                    android:text="Zensko"
+                    />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/EmailEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txtEmailEdit"
+                android:text="Email"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtEmailEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/KontakTelefonEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txtKontaktTelefonEdit"
+                android:text="Kontakt telefon"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtKontaktTelefonEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:inputType="phone" />
+
+            <TextView
+                android:id="@+id/PasswordEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/txtPasswordEdit"
+                android:text="Lozinka"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/txtPasswordEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:password="true"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/KrvnaGrupaEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/spinnerKrvnaGrupaRegistracija"
+                android:text="Krvna grupa"
+                android:textSize="16sp" />
+            <Spinner
+                android:id="@+id/spinnerKrvnaGrupaRegistracijaEdit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_border"
+                android:ems="10"
+                android:layout_marginBottom="10dp"
+                android:minHeight="40dp"
+                >
+            </Spinner>
+
+            <CheckBox
+                android:id="@+id/chAktivanEdit"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Želim biti donator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimaryBloodBank"
+
+                />
+
+            <Button
+                android:id="@+id/SaveEdit"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/buttonGray"
+                android:textColor="@color/colorWhite"
+                android:text="Uredi" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

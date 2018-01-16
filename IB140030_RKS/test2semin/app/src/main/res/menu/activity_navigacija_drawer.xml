@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <group android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_first_layout"
+            android:icon="@drawable/pretraga_ikn"
+            android:title="Pretraga donatora" />
+        <item
+            android:id="@+id/nav_second_layout"
+            android:icon="@drawable/mojipodaci_ikn"
+            android:title="Moji podaci" />
+        <item
+            android:id="@+id/nav_third_layout"
+            android:icon="@drawable/mojedonacije_ikn"
+            android:title="Moje donacije" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/zahtjevi_ikn"
+            android:title="Zahtjevi" />
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@drawable/odjava_ikn"
+            android:title="Odjava" />
+    </group>
+
+
+</menu>

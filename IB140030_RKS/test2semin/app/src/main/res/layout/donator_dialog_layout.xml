@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textNaslov"
+        android:paddingTop="10dp"
+        android:textSize="24dp"
+        android:drawableRight="@drawable/picture10josmanja"
+        android:drawablePadding="4dp"
+        android:paddingRight="10dp"
+        android:paddingStart="15dp"
+        android:text="Mirsad Ribic"
+        android:layout_marginBottom="2dp"
+        />
+    <View
+        android:id="@+id/separateLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textNaslov"
+        android:background="@android:color/darker_gray"/>
+
+    <ImageView
+        android:id="@+id/imageDialog"
+        android:layout_below="@+id/separateLine"
+        android:layout_margin="30dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+         />
+
+    <TextView
+
+        android:id="@+id/textPodaci"
+        android:textSize="18dp"
+        android:text="nesto"
+        android:layout_below="@+id/separateLine"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:lineSpacingExtra="5dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/imageDialog"/>
+
+    <View
+        android:id="@+id/separateLine2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/imageDialog"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textTelefon"
+        android:paddingTop="10dp"
+        android:paddingLeft="15dp"
+        android:paddingBottom="10dp"
+        android:text="387603187651"
+        android:textSize="18dp"
+        android:drawableLeft="@drawable/picture9"
+        android:drawablePadding="10dp"
+        android:layout_below="@+id/imageDialog"
+        />
+
+
+
+
+</RelativeLayout>

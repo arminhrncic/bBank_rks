@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BankaKrviHCIModelStoreContainer" CdmEntityContainer="BankaKrviHCIEntities">
+    <EntitySetMapping Name="CentriKorisnici">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.CentriKorisnici">
+        <MappingFragment StoreEntitySet="CentriKorisnici">
+          <ScalarProperty Name="CentarKorisnikId" ColumnName="CentarKorisnikId" />
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+          <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donacije">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Donacije">
+        <MappingFragment StoreEntitySet="Donacije">
+          <ScalarProperty Name="DonacijaId" ColumnName="DonacijaId" />
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+          <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+          <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+          <ScalarProperty Name="DatumDonacije" ColumnName="DatumDonacije" />
+          <ScalarProperty Name="BrojDoza" ColumnName="BrojDoza" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="UspjesnoRealizovana" ColumnName="UspjesnoRealizovana" />
+          <ScalarProperty Name="Odbijena" ColumnName="Odbijena" />
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donatori">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Donatori">
+        <MappingFragment StoreEntitySet="Donatori">
+          <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Spol" ColumnName="Spol" />
+          <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+          <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+          <ScalarProperty Name="DatumZadnjeDonacije" ColumnName="DatumZadnjeDonacije" />
+          <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+          <ScalarProperty Name="Slika" ColumnName="Slika" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drzave">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Drzave">
+        <MappingFragment StoreEntitySet="Drzave">
+          <ScalarProperty Name="DrzavaId" ColumnName="DrzavaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gradovi">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Gradovi">
+        <MappingFragment StoreEntitySet="Gradovi">
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="DrzavaId" ColumnName="DrzavaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Institucije">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Institucije">
+        <MappingFragment StoreEntitySet="Institucije">
+          <ScalarProperty Name="InstitucijaId" ColumnName="InstitucijaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="LozinkaHash" ColumnName="LozinkaHash" />
+          <ScalarProperty Name="LozinkaSalt" ColumnName="LozinkaSalt" />
+          <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Korisnici">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Korisnici">
+        <MappingFragment StoreEntitySet="Korisnici">
+          <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="DatumZaposlenja" ColumnName="DatumZaposlenja" />
+          <ScalarProperty Name="Spol" ColumnName="Spol" />
+          <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+          <ScalarProperty Name="LozinkaHash" ColumnName="LozinkaHash" />
+          <ScalarProperty Name="LozinkaSalt" ColumnName="LozinkaSalt" />
+          <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KorisnickeUloge">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.KorisnickeUloge">
+        <MappingFragment StoreEntitySet="KorisnickeUloge">
+          <ScalarProperty Name="KorisnickaUlogaId" ColumnName="KorisnickaUlogaId" />
+          <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+          <ScalarProperty Name="UlogaId" ColumnName="UlogaId" />
+          <ScalarProperty Name="DatumIzmjene" ColumnName="DatumIzmjene" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Obavjestenja">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Obavjestenja">
+        <MappingFragment StoreEntitySet="Obavjestenja">
+          <ScalarProperty Name="ObavjestenjeId" ColumnName="ObavjestenjeId" />
+          <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+          <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+          <ScalarProperty Name="DatumObjave" ColumnName="DatumObjave" />
+          <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+          <ScalarProperty Name="Sadrzaj" ColumnName="Sadrzaj" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stanja">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Stanja">
+        <MappingFragment StoreEntitySet="Stanja">
+          <ScalarProperty Name="StanjeId" ColumnName="StanjeId" />
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+          <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusZahtjeva">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.StatusZahtjeva">
+        <MappingFragment StoreEntitySet="StatusZahtjeva">
+          <ScalarProperty Name="StatusZahtjevaId" ColumnName="StatusZahtjevaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransfuzijskiCentri">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.TransfuzijskiCentri">
+        <MappingFragment StoreEntitySet="TransfuzijskiCentri">
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+          <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uloge">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.Uloge">
+        <MappingFragment StoreEntitySet="Uloge">
+          <ScalarProperty Name="UlogaId" ColumnName="UlogaId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="Opis" ColumnName="Opis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ZahtjevZaKrv">
+      <EntityTypeMapping TypeName="BankaKrviHCIModel.ZahtjevZaKrv">
+        <MappingFragment StoreEntitySet="ZahtjevZaKrv">
+          <ScalarProperty Name="ZahtjevZaKrvId" ColumnName="ZahtjevZaKrvId" />
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+          <ScalarProperty Name="InstitucijaId" ColumnName="InstitucijaId" />
+          <ScalarProperty Name="NazivKrvneGrupe" ColumnName="NazivKrvneGrupe" />
+          <ScalarProperty Name="BrojDoza" ColumnName="BrojDoza" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="DatumZahtjeva" ColumnName="DatumZahtjeva" />
+          <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+          <ScalarProperty Name="StatusZahtjevaId" ColumnName="StatusZahtjevaId" />
+          <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="bsp_Donacije_GetByDonatorIdHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donacije_GetByDonatorIdHCI">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Donacije_GetByDonatorIdHCI_Result">
+          <ScalarProperty Name="DonacijaId" ColumnName="DonacijaId" />
+          <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+          <ScalarProperty Name="BrojDoza" ColumnName="BrojDoza" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="UspjesnoRealizovana" ColumnName="UspjesnoRealizovana" />
+          <ScalarProperty Name="Donator" ColumnName="Donator" />
+          <ScalarProperty Name="DatumDonacije" ColumnName="DatumDonacije" />
+          <ScalarProperty Name="Centar" ColumnName="Centar" />
+          <ScalarProperty Name="Zaposlenik" ColumnName="Zaposlenik" />
+          <ScalarProperty Name="Odbijena" ColumnName="Odbijena" />
+          <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="bsp_Donacije_InsertHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donacije_InsertHCI" />
+    <FunctionImportMapping FunctionImportName="bsp_Donatori_GetByEmailHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_GetByEmailHCI">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Donatori_GetByEmailHCI_Result">
+          <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+          <ScalarProperty Name="DatumZadnjeDonacije" ColumnName="DatumZadnjeDonacije" />
+          <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+          <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+          <ScalarProperty Name="Spol" ColumnName="Spol" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Slika" ColumnName="Slika" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="bsp_Donatori_GetByIdHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_GetByIdHCI">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Donatori_GetByIdHCI_Result">
+          <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+          <ScalarProperty Name="Spol" ColumnName="Spol" />
+          <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+          <ScalarProperty Name="DatumZadnjeDonacije" ColumnName="DatumZadnjeDonacije" />
+          <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+          <ScalarProperty Name="UkupnoDonacija" ColumnName="UkupnoDonacija" />
+          <ScalarProperty Name="UkupnaKolicina" ColumnName="UkupnaKolicina" />
+          <ScalarProperty Name="UkupnoDoza" ColumnName="UkupnoDoza" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="bsp_Donatori_GetByKrvnaGrupaIndexHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_GetByKrvnaGrupaIndexHCI">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Donatori_GetByKrvnaGrupaIndexHCI_Result">
+          <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+          <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+          <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+          <ScalarProperty Name="DatumZadnjeDonacije" ColumnName="DatumZadnjeDonacije" />
+          <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+          <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+          <ScalarProperty Name="Spol" ColumnName="Spol" />
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Slika" ColumnName="Slika" />
+          <ScalarProperty Name="Grad" ColumnName="Grad" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="bsp_Donatori_InsertHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_InsertHCI" />
+    <FunctionImportMapping FunctionImportName="bsp_Donatori_UpdateDatumZadnjeDonacijeHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_UpdateDatumZadnjeDonacijeHCI" />
+    <FunctionImportMapping FunctionImportName="bsp_Donatori_UpdateHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_UpdateHCI" />
+    <FunctionImportMapping FunctionImportName="bsp_Donatori_UpdateSlikeHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_UpdateSlikeHCI" />
+    <FunctionImportMapping FunctionImportName="bsp_Gradovi_SelectAll" FunctionName="BankaKrviHCIModel.Store.bsp_Gradovi_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Gradovi_SelectAll_Result">
+          <ScalarProperty Name="GradId" ColumnName="GradId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="bsp_Stanja_SelectByCentarId" FunctionName="BankaKrviHCIModel.Store.bsp_Stanja_SelectByCentarId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Stanja_SelectByCentarId_Result">
+          <ScalarProperty Name="StanjeId" ColumnName="StanjeId" />
+          <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="bsp_TransfuzijskiCentri_SelectAll" FunctionName="BankaKrviHCIModel.Store.bsp_TransfuzijskiCentri_SelectAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_TransfuzijskiCentri_SelectAll_Result">
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+          <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="bsp_Zahtjevi_GetByDonatorId" FunctionName="BankaKrviHCIModel.Store.bsp_Zahtjevi_GetByDonatorId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Zahtjevi_GetByDonatorId_Result">
+          <ScalarProperty Name="ZahtjevZaKrvId" ColumnName="ZahtjevZaKrvId" />
+          <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+          <ScalarProperty Name="TransfuzijskiCentar" ColumnName="TransfuzijskiCentar" />
+          <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+          <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+          <ScalarProperty Name="Ime" ColumnName="Ime" />
+          <ScalarProperty Name="NazivKrvneGrupe" ColumnName="NazivKrvneGrupe" />
+          <ScalarProperty Name="BrojDoza" ColumnName="BrojDoza" />
+          <ScalarProperty Name="DatumZahtjeva" ColumnName="DatumZahtjeva" />
+          <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+          <ScalarProperty Name="Zaposlenik" ColumnName="Zaposlenik" />
+          <ScalarProperty Name="StatusZahtjevaId" ColumnName="StatusZahtjevaId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="bsp_Zahtjevi_InsertHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Zahtjevi_InsertHCI" />
+  </EntityContainerMapping>
+</Mapping>

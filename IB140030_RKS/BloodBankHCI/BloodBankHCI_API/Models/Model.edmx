@@ -1,0 +1,1673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BankaKrviHCIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CentriKorisnici">
+          <Key>
+            <PropertyRef Name="CentarKorisnikId" />
+          </Key>
+          <Property Name="CentarKorisnikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransfuzijskiCentarId" Type="int" />
+          <Property Name="KorisnikId" Type="int" />
+        </EntityType>
+        <EntityType Name="Donacije">
+          <Key>
+            <PropertyRef Name="DonacijaId" />
+          </Key>
+          <Property Name="DonacijaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransfuzijskiCentarId" Type="int" />
+          <Property Name="DonatorId" Type="int" />
+          <Property Name="KorisnikId" Type="int" />
+          <Property Name="DatumDonacije" Type="datetime" Nullable="false" />
+          <Property Name="BrojDoza" Type="int" Nullable="false" />
+          <Property Name="Kolicina" Type="int" Nullable="false" />
+          <Property Name="UspjesnoRealizovana" Type="bit" Nullable="false" />
+          <Property Name="Odbijena" Type="bit" Nullable="false" />
+          <Property Name="Napomena" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Donatori">
+          <Key>
+            <PropertyRef Name="DonatorId" />
+          </Key>
+          <Property Name="DonatorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DatumRodjenja" Type="datetime" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Spol" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="Aktivan" Type="bit" Nullable="false" />
+          <Property Name="GradId" Type="int" />
+          <Property Name="KrvnaGrupa" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="DatumZadnjeDonacije" Type="datetime" />
+          <Property Name="DatumRegistracije" Type="datetime" Nullable="false" />
+          <Property Name="Slika" Type="nvarchar(max)" />
+          <Property Name="Lozinka" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Drzave">
+          <Key>
+            <PropertyRef Name="DrzavaId" />
+          </Key>
+          <Property Name="DrzavaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gradovi">
+          <Key>
+            <PropertyRef Name="GradId" />
+          </Key>
+          <Property Name="GradId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DrzavaId" Type="int" />
+        </EntityType>
+        <EntityType Name="Institucije">
+          <Key>
+            <PropertyRef Name="InstitucijaId" />
+          </Key>
+          <Property Name="InstitucijaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="DatumRegistracije" Type="datetime" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LozinkaHash" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LozinkaSalt" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Aktivan" Type="bit" Nullable="false" />
+          <Property Name="GradId" Type="int" />
+        </EntityType>
+        <EntityType Name="Korisnici">
+          <Key>
+            <PropertyRef Name="KorisnikId" />
+          </Key>
+          <Property Name="KorisnikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Prezime" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DatumRodjenja" Type="datetime" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="DatumZaposlenja" Type="datetime" Nullable="false" />
+          <Property Name="Spol" Type="nvarchar" MaxLength="1" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LozinkaHash" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LozinkaSalt" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Aktivan" Type="bit" Nullable="false" />
+          <Property Name="GradId" Type="int" />
+        </EntityType>
+        <EntityType Name="KorisnickeUloge">
+          <Key>
+            <PropertyRef Name="KorisnickaUlogaId" />
+          </Key>
+          <Property Name="KorisnickaUlogaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KorisnikId" Type="int" />
+          <Property Name="UlogaId" Type="int" />
+          <Property Name="DatumIzmjene" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Obavjestenja">
+          <Key>
+            <PropertyRef Name="ObavjestenjeId" />
+          </Key>
+          <Property Name="ObavjestenjeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KorisnikId" Type="int" />
+          <Property Name="DonatorId" Type="int" />
+          <Property Name="DatumObjave" Type="datetime" Nullable="false" />
+          <Property Name="Naslov" Type="nvarchar" MaxLength="100" />
+          <Property Name="Sadrzaj" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Stanja">
+          <Key>
+            <PropertyRef Name="StanjeId" />
+          </Key>
+          <Property Name="StanjeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransfuzijskiCentarId" Type="int" />
+          <Property Name="KrvnaGrupa" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="Kolicina" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusZahtjeva">
+          <Key>
+            <PropertyRef Name="StatusZahtjevaId" />
+          </Key>
+          <Property Name="StatusZahtjevaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TransfuzijskiCentri">
+          <Key>
+            <PropertyRef Name="TransfuzijskiCentarId" />
+          </Key>
+          <Property Name="TransfuzijskiCentarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Adresa" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Telefon" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="GradId" Type="int" />
+          <Property Name="Aktivan" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Uloge">
+          <Key>
+            <PropertyRef Name="UlogaId" />
+          </Key>
+          <Property Name="UlogaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Naziv" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ZahtjevZaKrv">
+          <Key>
+            <PropertyRef Name="ZahtjevZaKrvId" />
+          </Key>
+          <Property Name="ZahtjevZaKrvId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransfuzijskiCentarId" Type="int" />
+          <Property Name="InstitucijaId" Type="int" />
+          <Property Name="NazivKrvneGrupe" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="BrojDoza" Type="int" Nullable="false" />
+          <Property Name="Kolicina" Type="int" Nullable="false" />
+          <Property Name="DatumZahtjeva" Type="datetime" Nullable="false" />
+          <Property Name="KorisnikId" Type="int" />
+          <Property Name="StatusZahtjevaId" Type="int" />
+          <Property Name="DonatorId" Type="int" />
+        </EntityType>
+        <Association Name="donator_centar_fk">
+          <End Role="Donatori" Type="Self.Donatori" Multiplicity="0..1" />
+          <End Role="Donacije" Type="Self.Donacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donatori">
+              <PropertyRef Name="DonatorId" />
+            </Principal>
+            <Dependent Role="Donacije">
+              <PropertyRef Name="DonatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="donator_grad_fk">
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="0..1" />
+          <End Role="Donatori" Type="Self.Donatori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradovi">
+              <PropertyRef Name="GradId" />
+            </Principal>
+            <Dependent Role="Donatori">
+              <PropertyRef Name="GradId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="donator_korisnik_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="Donacije" Type="Self.Donacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="Donacije">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="donator_obavjestenje_fk">
+          <End Role="Donatori" Type="Self.Donatori" Multiplicity="0..1" />
+          <End Role="Obavjestenja" Type="Self.Obavjestenja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donatori">
+              <PropertyRef Name="DonatorId" />
+            </Principal>
+            <Dependent Role="Obavjestenja">
+              <PropertyRef Name="DonatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZahtjevZa__Donat__06CD04F7">
+          <End Role="Donatori" Type="Self.Donatori" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donatori">
+              <PropertyRef Name="DonatorId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="DonatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="grad_drzava_fk">
+          <End Role="Drzave" Type="Self.Drzave" Multiplicity="0..1" />
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzave">
+              <PropertyRef Name="DrzavaId" />
+            </Principal>
+            <Dependent Role="Gradovi">
+              <PropertyRef Name="DrzavaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="institucija_grad_fk">
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="0..1" />
+          <End Role="Institucije" Type="Self.Institucije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradovi">
+              <PropertyRef Name="GradId" />
+            </Principal>
+            <Dependent Role="Institucije">
+              <PropertyRef Name="GradId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="institucija_zahtjev_fk">
+          <End Role="Institucije" Type="Self.Institucije" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institucije">
+              <PropertyRef Name="InstitucijaId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="InstitucijaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="korisnik_centar_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="CentriKorisnici" Type="Self.CentriKorisnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="CentriKorisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="korisnik_grad_fk">
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="0..1" />
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradovi">
+              <PropertyRef Name="GradId" />
+            </Principal>
+            <Dependent Role="Korisnici">
+              <PropertyRef Name="GradId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="korisnik_obavjestenje_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="Obavjestenja" Type="Self.Obavjestenja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="Obavjestenja">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="korisnik_uloga_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="KorisnickeUloge" Type="Self.KorisnickeUloge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="KorisnickeUloge">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="status_zahtjev_fk">
+          <End Role="StatusZahtjeva" Type="Self.StatusZahtjeva" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusZahtjeva">
+              <PropertyRef Name="StatusZahtjevaId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="StatusZahtjevaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_donator_fk">
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="0..1" />
+          <End Role="Donacije" Type="Self.Donacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransfuzijskiCentri">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Principal>
+            <Dependent Role="Donacije">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_grad_fk">
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="0..1" />
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradovi">
+              <PropertyRef Name="GradId" />
+            </Principal>
+            <Dependent Role="TransfuzijskiCentri">
+              <PropertyRef Name="GradId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_korisnik_fk">
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="0..1" />
+          <End Role="CentriKorisnici" Type="Self.CentriKorisnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransfuzijskiCentri">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Principal>
+            <Dependent Role="CentriKorisnici">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_stanje_fk">
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="0..1" />
+          <End Role="Stanja" Type="Self.Stanja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransfuzijskiCentri">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Principal>
+            <Dependent Role="Stanja">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_zahtjev_fk">
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransfuzijskiCentri">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="uloga_korisnik_fk">
+          <End Role="Uloge" Type="Self.Uloge" Multiplicity="0..1" />
+          <End Role="KorisnickeUloge" Type="Self.KorisnickeUloge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uloge">
+              <PropertyRef Name="UlogaId" />
+            </Principal>
+            <Dependent Role="KorisnickeUloge">
+              <PropertyRef Name="UlogaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="zahtjev_korisnik_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="bsp_Donacije_GetByDonatorIdHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DonatorId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="bsp_Donacije_InsertHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TransfuzijskiCentarId" Type="int" Mode="In" />
+          <Parameter Name="DonatorId" Type="int" Mode="In" />
+          <Parameter Name="DatumDonacije" Type="datetime" Mode="In" />
+          <Parameter Name="BrojDoza" Type="int" Mode="In" />
+          <Parameter Name="Kolicina" Type="int" Mode="In" />
+          <Parameter Name="UspjesnoRealizovana" Type="bit" Mode="In" />
+          <Parameter Name="Odbijena" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="bsp_Donatori_GetByEmailHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="bsp_Donatori_GetByIdHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DonatorId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="bsp_Donatori_GetByKrvnaGrupaIndexHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="kgIndex" Type="int" Mode="In" />
+        </Function>
+        <Function Name="bsp_Donatori_InsertHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Ime" Type="nvarchar" Mode="In" />
+          <Parameter Name="Prezime" Type="nvarchar" Mode="In" />
+          <Parameter Name="Adresa" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="DatumRodjenja" Type="datetime" Mode="In" />
+          <Parameter Name="Telefon" Type="nvarchar" Mode="In" />
+          <Parameter Name="Spol" Type="nvarchar" Mode="In" />
+          <Parameter Name="Lozinka" Type="nvarchar" Mode="In" />
+          <Parameter Name="Aktivan" Type="bit" Mode="In" />
+          <Parameter Name="GradId" Type="int" Mode="In" />
+          <Parameter Name="KrvnaGrupa" Type="nvarchar" Mode="In" />
+          <Parameter Name="DatumRegistracije" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="bsp_Donatori_UpdateDatumZadnjeDonacijeHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DonatorId" Type="int" Mode="In" />
+          <Parameter Name="datum" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="bsp_Donatori_UpdateHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DonatorId" Type="int" Mode="In" />
+          <Parameter Name="Ime" Type="nvarchar" Mode="In" />
+          <Parameter Name="Prezime" Type="nvarchar" Mode="In" />
+          <Parameter Name="Adresa" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="DatumRodjenja" Type="datetime" Mode="In" />
+          <Parameter Name="Telefon" Type="nvarchar" Mode="In" />
+          <Parameter Name="Spol" Type="nvarchar" Mode="In" />
+          <Parameter Name="KrvnaGrupa" Type="nvarchar" Mode="In" />
+          <Parameter Name="Lozinka" Type="nvarchar" Mode="In" />
+          <Parameter Name="GradId" Type="int" Mode="In" />
+          <Parameter Name="Aktivan" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="bsp_Donatori_UpdateSlikeHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DonatorId" Type="int" Mode="In" />
+          <Parameter Name="slika" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="bsp_Gradovi_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="bsp_Stanja_SelectByCentarId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TransfuzijskiCentarId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="bsp_TransfuzijskiCentri_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="bsp_Zahtjevi_GetByDonatorId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DonatorId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="bsp_Zahtjevi_InsertHCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TransfuzijskiCentarId" Type="int" Mode="In" />
+          <Parameter Name="DonatorId" Type="int" Mode="In" />
+          <Parameter Name="NazivKrvneGrupe" Type="nvarchar" Mode="In" />
+          <Parameter Name="BrojDoza" Type="int" Mode="In" />
+          <Parameter Name="DatumZahtjeva" Type="datetime" Mode="In" />
+          <Parameter Name="StatusZahtjeva" Type="int" Mode="In" />
+          <Parameter Name="Kolicina" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="BankaKrviHCIModelStoreContainer">
+          <EntitySet Name="CentriKorisnici" EntityType="Self.CentriKorisnici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donacije" EntityType="Self.Donacije" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Donatori" EntityType="Self.Donatori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drzave" EntityType="Self.Drzave" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gradovi" EntityType="Self.Gradovi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Institucije" EntityType="Self.Institucije" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Korisnici" EntityType="Self.Korisnici" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KorisnickeUloge" EntityType="Self.KorisnickeUloge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Obavjestenja" EntityType="Self.Obavjestenja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stanja" EntityType="Self.Stanja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StatusZahtjeva" EntityType="Self.StatusZahtjeva" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TransfuzijskiCentri" EntityType="Self.TransfuzijskiCentri" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uloge" EntityType="Self.Uloge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZahtjevZaKrv" EntityType="Self.ZahtjevZaKrv" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="donator_centar_fk" Association="Self.donator_centar_fk">
+            <End Role="Donatori" EntitySet="Donatori" />
+            <End Role="Donacije" EntitySet="Donacije" />
+          </AssociationSet>
+          <AssociationSet Name="donator_grad_fk" Association="Self.donator_grad_fk">
+            <End Role="Gradovi" EntitySet="Gradovi" />
+            <End Role="Donatori" EntitySet="Donatori" />
+          </AssociationSet>
+          <AssociationSet Name="donator_korisnik_fk" Association="Self.donator_korisnik_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="Donacije" EntitySet="Donacije" />
+          </AssociationSet>
+          <AssociationSet Name="donator_obavjestenje_fk" Association="Self.donator_obavjestenje_fk">
+            <End Role="Donatori" EntitySet="Donatori" />
+            <End Role="Obavjestenja" EntitySet="Obavjestenja" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZahtjevZa__Donat__06CD04F7" Association="Self.FK__ZahtjevZa__Donat__06CD04F7">
+            <End Role="Donatori" EntitySet="Donatori" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <AssociationSet Name="grad_drzava_fk" Association="Self.grad_drzava_fk">
+            <End Role="Drzave" EntitySet="Drzave" />
+            <End Role="Gradovi" EntitySet="Gradovi" />
+          </AssociationSet>
+          <AssociationSet Name="institucija_grad_fk" Association="Self.institucija_grad_fk">
+            <End Role="Gradovi" EntitySet="Gradovi" />
+            <End Role="Institucije" EntitySet="Institucije" />
+          </AssociationSet>
+          <AssociationSet Name="institucija_zahtjev_fk" Association="Self.institucija_zahtjev_fk">
+            <End Role="Institucije" EntitySet="Institucije" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <AssociationSet Name="korisnik_centar_fk" Association="Self.korisnik_centar_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="CentriKorisnici" EntitySet="CentriKorisnici" />
+          </AssociationSet>
+          <AssociationSet Name="korisnik_grad_fk" Association="Self.korisnik_grad_fk">
+            <End Role="Gradovi" EntitySet="Gradovi" />
+            <End Role="Korisnici" EntitySet="Korisnici" />
+          </AssociationSet>
+          <AssociationSet Name="korisnik_obavjestenje_fk" Association="Self.korisnik_obavjestenje_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="Obavjestenja" EntitySet="Obavjestenja" />
+          </AssociationSet>
+          <AssociationSet Name="korisnik_uloga_fk" Association="Self.korisnik_uloga_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="KorisnickeUloge" EntitySet="KorisnickeUloge" />
+          </AssociationSet>
+          <AssociationSet Name="status_zahtjev_fk" Association="Self.status_zahtjev_fk">
+            <End Role="StatusZahtjeva" EntitySet="StatusZahtjeva" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_donator_fk" Association="Self.transfuzijski_centar_donator_fk">
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+            <End Role="Donacije" EntitySet="Donacije" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_grad_fk" Association="Self.transfuzijski_centar_grad_fk">
+            <End Role="Gradovi" EntitySet="Gradovi" />
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_korisnik_fk" Association="Self.transfuzijski_centar_korisnik_fk">
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+            <End Role="CentriKorisnici" EntitySet="CentriKorisnici" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_stanje_fk" Association="Self.transfuzijski_centar_stanje_fk">
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+            <End Role="Stanja" EntitySet="Stanja" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_zahtjev_fk" Association="Self.transfuzijski_centar_zahtjev_fk">
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <AssociationSet Name="uloga_korisnik_fk" Association="Self.uloga_korisnik_fk">
+            <End Role="Uloge" EntitySet="Uloge" />
+            <End Role="KorisnickeUloge" EntitySet="KorisnickeUloge" />
+          </AssociationSet>
+          <AssociationSet Name="zahtjev_korisnik_fk" Association="Self.zahtjev_korisnik_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BankaKrviHCIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CentriKorisnici">
+          <Key>
+            <PropertyRef Name="CentarKorisnikId" />
+          </Key>
+          <Property Name="CentarKorisnikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransfuzijskiCentarId" Type="Int32" />
+          <Property Name="KorisnikId" Type="Int32" />
+          <NavigationProperty Name="Korisnici" Relationship="Self.korisnik_centar_fk" FromRole="CentriKorisnici" ToRole="Korisnici" />
+          <NavigationProperty Name="TransfuzijskiCentri" Relationship="Self.transfuzijski_centar_korisnik_fk" FromRole="CentriKorisnici" ToRole="TransfuzijskiCentri" />
+        </EntityType>
+        <EntityType Name="Donacije">
+          <Key>
+            <PropertyRef Name="DonacijaId" />
+          </Key>
+          <Property Name="DonacijaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransfuzijskiCentarId" Type="Int32" />
+          <Property Name="DonatorId" Type="Int32" />
+          <Property Name="KorisnikId" Type="Int32" />
+          <Property Name="DatumDonacije" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BrojDoza" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" Nullable="false" />
+          <Property Name="UspjesnoRealizovana" Type="Boolean" Nullable="false" />
+          <Property Name="Odbijena" Type="Boolean" Nullable="false" />
+          <Property Name="Napomena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Donatori" Relationship="Self.donator_centar_fk" FromRole="Donacije" ToRole="Donatori" />
+          <NavigationProperty Name="Korisnici" Relationship="Self.donator_korisnik_fk" FromRole="Donacije" ToRole="Korisnici" />
+          <NavigationProperty Name="TransfuzijskiCentri" Relationship="Self.transfuzijski_centar_donator_fk" FromRole="Donacije" ToRole="TransfuzijskiCentri" />
+        </EntityType>
+        <EntityType Name="Donatori">
+          <Key>
+            <PropertyRef Name="DonatorId" />
+          </Key>
+          <Property Name="DonatorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DatumRodjenja" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Spol" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aktivan" Type="Boolean" Nullable="false" />
+          <Property Name="GradId" Type="Int32" />
+          <Property Name="KrvnaGrupa" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DatumZadnjeDonacije" Type="DateTime" Precision="3" />
+          <Property Name="DatumRegistracije" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Slika" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lozinka" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Donacije" Relationship="Self.donator_centar_fk" FromRole="Donatori" ToRole="Donacije" />
+          <NavigationProperty Name="Gradovi" Relationship="Self.donator_grad_fk" FromRole="Donatori" ToRole="Gradovi" />
+          <NavigationProperty Name="Obavjestenja" Relationship="Self.donator_obavjestenje_fk" FromRole="Donatori" ToRole="Obavjestenja" />
+          <NavigationProperty Name="ZahtjevZaKrv" Relationship="Self.FK__ZahtjevZa__Donat__06CD04F7" FromRole="Donatori" ToRole="ZahtjevZaKrv" />
+        </EntityType>
+        <EntityType Name="Drzave">
+          <Key>
+            <PropertyRef Name="DrzavaId" />
+          </Key>
+          <Property Name="DrzavaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Gradovi" Relationship="Self.grad_drzava_fk" FromRole="Drzave" ToRole="Gradovi" />
+        </EntityType>
+        <EntityType Name="Gradovi">
+          <Key>
+            <PropertyRef Name="GradId" />
+          </Key>
+          <Property Name="GradId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DrzavaId" Type="Int32" />
+          <NavigationProperty Name="Donatori" Relationship="Self.donator_grad_fk" FromRole="Gradovi" ToRole="Donatori" />
+          <NavigationProperty Name="Drzave" Relationship="Self.grad_drzava_fk" FromRole="Gradovi" ToRole="Drzave" />
+          <NavigationProperty Name="Institucije" Relationship="Self.institucija_grad_fk" FromRole="Gradovi" ToRole="Institucije" />
+          <NavigationProperty Name="Korisnici" Relationship="Self.korisnik_grad_fk" FromRole="Gradovi" ToRole="Korisnici" />
+          <NavigationProperty Name="TransfuzijskiCentri" Relationship="Self.transfuzijski_centar_grad_fk" FromRole="Gradovi" ToRole="TransfuzijskiCentri" />
+        </EntityType>
+        <EntityType Name="Institucije">
+          <Key>
+            <PropertyRef Name="InstitucijaId" />
+          </Key>
+          <Property Name="InstitucijaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DatumRegistracije" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="KorisnickoIme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LozinkaHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LozinkaSalt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aktivan" Type="Boolean" Nullable="false" />
+          <Property Name="GradId" Type="Int32" />
+          <NavigationProperty Name="Gradovi" Relationship="Self.institucija_grad_fk" FromRole="Institucije" ToRole="Gradovi" />
+          <NavigationProperty Name="ZahtjevZaKrv" Relationship="Self.institucija_zahtjev_fk" FromRole="Institucije" ToRole="ZahtjevZaKrv" />
+        </EntityType>
+        <EntityType Name="Korisnici">
+          <Key>
+            <PropertyRef Name="KorisnikId" />
+          </Key>
+          <Property Name="KorisnikId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Prezime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DatumRodjenja" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DatumZaposlenja" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Spol" Type="String" MaxLength="1" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KorisnickoIme" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LozinkaHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LozinkaSalt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Aktivan" Type="Boolean" Nullable="false" />
+          <Property Name="GradId" Type="Int32" />
+          <NavigationProperty Name="CentriKorisnici" Relationship="Self.korisnik_centar_fk" FromRole="Korisnici" ToRole="CentriKorisnici" />
+          <NavigationProperty Name="Donacije" Relationship="Self.donator_korisnik_fk" FromRole="Korisnici" ToRole="Donacije" />
+          <NavigationProperty Name="Gradovi" Relationship="Self.korisnik_grad_fk" FromRole="Korisnici" ToRole="Gradovi" />
+          <NavigationProperty Name="Obavjestenja" Relationship="Self.korisnik_obavjestenje_fk" FromRole="Korisnici" ToRole="Obavjestenja" />
+          <NavigationProperty Name="KorisnickeUloge" Relationship="Self.korisnik_uloga_fk" FromRole="Korisnici" ToRole="KorisnickeUloge" />
+          <NavigationProperty Name="ZahtjevZaKrv" Relationship="Self.zahtjev_korisnik_fk" FromRole="Korisnici" ToRole="ZahtjevZaKrv" />
+        </EntityType>
+        <EntityType Name="KorisnickeUloge">
+          <Key>
+            <PropertyRef Name="KorisnickaUlogaId" />
+          </Key>
+          <Property Name="KorisnickaUlogaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KorisnikId" Type="Int32" />
+          <Property Name="UlogaId" Type="Int32" />
+          <Property Name="DatumIzmjene" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Korisnici" Relationship="Self.korisnik_uloga_fk" FromRole="KorisnickeUloge" ToRole="Korisnici" />
+          <NavigationProperty Name="Uloge" Relationship="Self.uloga_korisnik_fk" FromRole="KorisnickeUloge" ToRole="Uloge" />
+        </EntityType>
+        <EntityType Name="Obavjestenja">
+          <Key>
+            <PropertyRef Name="ObavjestenjeId" />
+          </Key>
+          <Property Name="ObavjestenjeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KorisnikId" Type="Int32" />
+          <Property Name="DonatorId" Type="Int32" />
+          <Property Name="DatumObjave" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Naslov" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Sadrzaj" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Donatori" Relationship="Self.donator_obavjestenje_fk" FromRole="Obavjestenja" ToRole="Donatori" />
+          <NavigationProperty Name="Korisnici" Relationship="Self.korisnik_obavjestenje_fk" FromRole="Obavjestenja" ToRole="Korisnici" />
+        </EntityType>
+        <EntityType Name="Stanja">
+          <Key>
+            <PropertyRef Name="StanjeId" />
+          </Key>
+          <Property Name="StanjeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransfuzijskiCentarId" Type="Int32" />
+          <Property Name="KrvnaGrupa" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TransfuzijskiCentri" Relationship="Self.transfuzijski_centar_stanje_fk" FromRole="Stanja" ToRole="TransfuzijskiCentri" />
+        </EntityType>
+        <EntityType Name="StatusZahtjeva">
+          <Key>
+            <PropertyRef Name="StatusZahtjevaId" />
+          </Key>
+          <Property Name="StatusZahtjevaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ZahtjevZaKrv" Relationship="Self.status_zahtjev_fk" FromRole="StatusZahtjeva" ToRole="ZahtjevZaKrv" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TransfuzijskiCentri">
+          <Key>
+            <PropertyRef Name="TransfuzijskiCentarId" />
+          </Key>
+          <Property Name="TransfuzijskiCentarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adresa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Telefon" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GradId" Type="Int32" />
+          <Property Name="Aktivan" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CentriKorisnici" Relationship="Self.transfuzijski_centar_korisnik_fk" FromRole="TransfuzijskiCentri" ToRole="CentriKorisnici" />
+          <NavigationProperty Name="Donacije" Relationship="Self.transfuzijski_centar_donator_fk" FromRole="TransfuzijskiCentri" ToRole="Donacije" />
+          <NavigationProperty Name="Gradovi" Relationship="Self.transfuzijski_centar_grad_fk" FromRole="TransfuzijskiCentri" ToRole="Gradovi" />
+          <NavigationProperty Name="Stanja" Relationship="Self.transfuzijski_centar_stanje_fk" FromRole="TransfuzijskiCentri" ToRole="Stanja" />
+          <NavigationProperty Name="ZahtjevZaKrv" Relationship="Self.transfuzijski_centar_zahtjev_fk" FromRole="TransfuzijskiCentri" ToRole="ZahtjevZaKrv" />
+        </EntityType>
+        <EntityType Name="Uloge">
+          <Key>
+            <PropertyRef Name="UlogaId" />
+          </Key>
+          <Property Name="UlogaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Naziv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Opis" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KorisnickeUloge" Relationship="Self.uloga_korisnik_fk" FromRole="Uloge" ToRole="KorisnickeUloge" />
+        </EntityType>
+        <EntityType Name="ZahtjevZaKrv">
+          <Key>
+            <PropertyRef Name="ZahtjevZaKrvId" />
+          </Key>
+          <Property Name="ZahtjevZaKrvId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransfuzijskiCentarId" Type="Int32" />
+          <Property Name="InstitucijaId" Type="Int32" />
+          <Property Name="NazivKrvneGrupe" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BrojDoza" Type="Int32" Nullable="false" />
+          <Property Name="Kolicina" Type="Int32" Nullable="false" />
+          <Property Name="DatumZahtjeva" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="KorisnikId" Type="Int32" />
+          <Property Name="StatusZahtjevaId" Type="Int32" />
+          <Property Name="DonatorId" Type="Int32" />
+          <NavigationProperty Name="Donatori" Relationship="Self.FK__ZahtjevZa__Donat__06CD04F7" FromRole="ZahtjevZaKrv" ToRole="Donatori" />
+          <NavigationProperty Name="Institucije" Relationship="Self.institucija_zahtjev_fk" FromRole="ZahtjevZaKrv" ToRole="Institucije" />
+          <NavigationProperty Name="Korisnici" Relationship="Self.zahtjev_korisnik_fk" FromRole="ZahtjevZaKrv" ToRole="Korisnici" />
+          <NavigationProperty Name="StatusZahtjeva" Relationship="Self.status_zahtjev_fk" FromRole="ZahtjevZaKrv" ToRole="StatusZahtjeva" />
+          <NavigationProperty Name="TransfuzijskiCentri" Relationship="Self.transfuzijski_centar_zahtjev_fk" FromRole="ZahtjevZaKrv" ToRole="TransfuzijskiCentri" />
+        </EntityType>
+        <Association Name="korisnik_centar_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="CentriKorisnici" Type="Self.CentriKorisnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="CentriKorisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_korisnik_fk">
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="0..1" />
+          <End Role="CentriKorisnici" Type="Self.CentriKorisnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransfuzijskiCentri">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Principal>
+            <Dependent Role="CentriKorisnici">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="donator_centar_fk">
+          <End Role="Donatori" Type="Self.Donatori" Multiplicity="0..1" />
+          <End Role="Donacije" Type="Self.Donacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donatori">
+              <PropertyRef Name="DonatorId" />
+            </Principal>
+            <Dependent Role="Donacije">
+              <PropertyRef Name="DonatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="donator_korisnik_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="Donacije" Type="Self.Donacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="Donacije">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_donator_fk">
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="0..1" />
+          <End Role="Donacije" Type="Self.Donacije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransfuzijskiCentri">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Principal>
+            <Dependent Role="Donacije">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="donator_grad_fk">
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="0..1" />
+          <End Role="Donatori" Type="Self.Donatori" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradovi">
+              <PropertyRef Name="GradId" />
+            </Principal>
+            <Dependent Role="Donatori">
+              <PropertyRef Name="GradId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="donator_obavjestenje_fk">
+          <End Role="Donatori" Type="Self.Donatori" Multiplicity="0..1" />
+          <End Role="Obavjestenja" Type="Self.Obavjestenja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donatori">
+              <PropertyRef Name="DonatorId" />
+            </Principal>
+            <Dependent Role="Obavjestenja">
+              <PropertyRef Name="DonatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ZahtjevZa__Donat__06CD04F7">
+          <End Role="Donatori" Type="Self.Donatori" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Donatori">
+              <PropertyRef Name="DonatorId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="DonatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="grad_drzava_fk">
+          <End Role="Drzave" Type="Self.Drzave" Multiplicity="0..1" />
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drzave">
+              <PropertyRef Name="DrzavaId" />
+            </Principal>
+            <Dependent Role="Gradovi">
+              <PropertyRef Name="DrzavaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="institucija_grad_fk">
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="0..1" />
+          <End Role="Institucije" Type="Self.Institucije" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradovi">
+              <PropertyRef Name="GradId" />
+            </Principal>
+            <Dependent Role="Institucije">
+              <PropertyRef Name="GradId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="korisnik_grad_fk">
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="0..1" />
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradovi">
+              <PropertyRef Name="GradId" />
+            </Principal>
+            <Dependent Role="Korisnici">
+              <PropertyRef Name="GradId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_grad_fk">
+          <End Role="Gradovi" Type="Self.Gradovi" Multiplicity="0..1" />
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gradovi">
+              <PropertyRef Name="GradId" />
+            </Principal>
+            <Dependent Role="TransfuzijskiCentri">
+              <PropertyRef Name="GradId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="institucija_zahtjev_fk">
+          <End Role="Institucije" Type="Self.Institucije" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Institucije">
+              <PropertyRef Name="InstitucijaId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="InstitucijaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="korisnik_obavjestenje_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="Obavjestenja" Type="Self.Obavjestenja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="Obavjestenja">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="korisnik_uloga_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="KorisnickeUloge" Type="Self.KorisnickeUloge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="KorisnickeUloge">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="zahtjev_korisnik_fk">
+          <End Role="Korisnici" Type="Self.Korisnici" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Korisnici">
+              <PropertyRef Name="KorisnikId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="KorisnikId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="uloga_korisnik_fk">
+          <End Role="Uloge" Type="Self.Uloge" Multiplicity="0..1" />
+          <End Role="KorisnickeUloge" Type="Self.KorisnickeUloge" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uloge">
+              <PropertyRef Name="UlogaId" />
+            </Principal>
+            <Dependent Role="KorisnickeUloge">
+              <PropertyRef Name="UlogaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_stanje_fk">
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="0..1" />
+          <End Role="Stanja" Type="Self.Stanja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransfuzijskiCentri">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Principal>
+            <Dependent Role="Stanja">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="status_zahtjev_fk">
+          <End Role="StatusZahtjeva" Type="Self.StatusZahtjeva" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StatusZahtjeva">
+              <PropertyRef Name="StatusZahtjevaId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="StatusZahtjevaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="transfuzijski_centar_zahtjev_fk">
+          <End Role="TransfuzijskiCentri" Type="Self.TransfuzijskiCentri" Multiplicity="0..1" />
+          <End Role="ZahtjevZaKrv" Type="Self.ZahtjevZaKrv" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransfuzijskiCentri">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Principal>
+            <Dependent Role="ZahtjevZaKrv">
+              <PropertyRef Name="TransfuzijskiCentarId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BankaKrviHCIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CentriKorisnici" EntityType="Self.CentriKorisnici" />
+          <EntitySet Name="Donacije" EntityType="Self.Donacije" />
+          <EntitySet Name="Donatori" EntityType="Self.Donatori" />
+          <EntitySet Name="Drzave" EntityType="Self.Drzave" />
+          <EntitySet Name="Gradovi" EntityType="Self.Gradovi" />
+          <EntitySet Name="Institucije" EntityType="Self.Institucije" />
+          <EntitySet Name="Korisnici" EntityType="Self.Korisnici" />
+          <EntitySet Name="KorisnickeUloge" EntityType="Self.KorisnickeUloge" />
+          <EntitySet Name="Obavjestenja" EntityType="Self.Obavjestenja" />
+          <EntitySet Name="Stanja" EntityType="Self.Stanja" />
+          <EntitySet Name="StatusZahtjeva" EntityType="Self.StatusZahtjeva" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TransfuzijskiCentri" EntityType="Self.TransfuzijskiCentri" />
+          <EntitySet Name="Uloge" EntityType="Self.Uloge" />
+          <EntitySet Name="ZahtjevZaKrv" EntityType="Self.ZahtjevZaKrv" />
+          <AssociationSet Name="korisnik_centar_fk" Association="Self.korisnik_centar_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="CentriKorisnici" EntitySet="CentriKorisnici" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_korisnik_fk" Association="Self.transfuzijski_centar_korisnik_fk">
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+            <End Role="CentriKorisnici" EntitySet="CentriKorisnici" />
+          </AssociationSet>
+          <AssociationSet Name="donator_centar_fk" Association="Self.donator_centar_fk">
+            <End Role="Donatori" EntitySet="Donatori" />
+            <End Role="Donacije" EntitySet="Donacije" />
+          </AssociationSet>
+          <AssociationSet Name="donator_korisnik_fk" Association="Self.donator_korisnik_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="Donacije" EntitySet="Donacije" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_donator_fk" Association="Self.transfuzijski_centar_donator_fk">
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+            <End Role="Donacije" EntitySet="Donacije" />
+          </AssociationSet>
+          <AssociationSet Name="donator_grad_fk" Association="Self.donator_grad_fk">
+            <End Role="Gradovi" EntitySet="Gradovi" />
+            <End Role="Donatori" EntitySet="Donatori" />
+          </AssociationSet>
+          <AssociationSet Name="donator_obavjestenje_fk" Association="Self.donator_obavjestenje_fk">
+            <End Role="Donatori" EntitySet="Donatori" />
+            <End Role="Obavjestenja" EntitySet="Obavjestenja" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ZahtjevZa__Donat__06CD04F7" Association="Self.FK__ZahtjevZa__Donat__06CD04F7">
+            <End Role="Donatori" EntitySet="Donatori" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <AssociationSet Name="grad_drzava_fk" Association="Self.grad_drzava_fk">
+            <End Role="Drzave" EntitySet="Drzave" />
+            <End Role="Gradovi" EntitySet="Gradovi" />
+          </AssociationSet>
+          <AssociationSet Name="institucija_grad_fk" Association="Self.institucija_grad_fk">
+            <End Role="Gradovi" EntitySet="Gradovi" />
+            <End Role="Institucije" EntitySet="Institucije" />
+          </AssociationSet>
+          <AssociationSet Name="korisnik_grad_fk" Association="Self.korisnik_grad_fk">
+            <End Role="Gradovi" EntitySet="Gradovi" />
+            <End Role="Korisnici" EntitySet="Korisnici" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_grad_fk" Association="Self.transfuzijski_centar_grad_fk">
+            <End Role="Gradovi" EntitySet="Gradovi" />
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+          </AssociationSet>
+          <AssociationSet Name="institucija_zahtjev_fk" Association="Self.institucija_zahtjev_fk">
+            <End Role="Institucije" EntitySet="Institucije" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <AssociationSet Name="korisnik_obavjestenje_fk" Association="Self.korisnik_obavjestenje_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="Obavjestenja" EntitySet="Obavjestenja" />
+          </AssociationSet>
+          <AssociationSet Name="korisnik_uloga_fk" Association="Self.korisnik_uloga_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="KorisnickeUloge" EntitySet="KorisnickeUloge" />
+          </AssociationSet>
+          <AssociationSet Name="zahtjev_korisnik_fk" Association="Self.zahtjev_korisnik_fk">
+            <End Role="Korisnici" EntitySet="Korisnici" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <AssociationSet Name="uloga_korisnik_fk" Association="Self.uloga_korisnik_fk">
+            <End Role="Uloge" EntitySet="Uloge" />
+            <End Role="KorisnickeUloge" EntitySet="KorisnickeUloge" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_stanje_fk" Association="Self.transfuzijski_centar_stanje_fk">
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+            <End Role="Stanja" EntitySet="Stanja" />
+          </AssociationSet>
+          <AssociationSet Name="status_zahtjev_fk" Association="Self.status_zahtjev_fk">
+            <End Role="StatusZahtjeva" EntitySet="StatusZahtjeva" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <AssociationSet Name="transfuzijski_centar_zahtjev_fk" Association="Self.transfuzijski_centar_zahtjev_fk">
+            <End Role="TransfuzijskiCentri" EntitySet="TransfuzijskiCentri" />
+            <End Role="ZahtjevZaKrv" EntitySet="ZahtjevZaKrv" />
+          </AssociationSet>
+          <FunctionImport Name="bsp_Donacije_GetByDonatorIdHCI" ReturnType="Collection(BankaKrviHCIModel.bsp_Donacije_GetByDonatorIdHCI_Result)">
+            <Parameter Name="DonatorId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Donacije_InsertHCI" ReturnType="Collection(Decimal)">
+            <Parameter Name="TransfuzijskiCentarId" Mode="In" Type="Int32" />
+            <Parameter Name="DonatorId" Mode="In" Type="Int32" />
+            <Parameter Name="DatumDonacije" Mode="In" Type="DateTime" />
+            <Parameter Name="BrojDoza" Mode="In" Type="Int32" />
+            <Parameter Name="Kolicina" Mode="In" Type="Int32" />
+            <Parameter Name="UspjesnoRealizovana" Mode="In" Type="Boolean" />
+            <Parameter Name="Odbijena" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Donatori_GetByEmailHCI" ReturnType="Collection(BankaKrviHCIModel.bsp_Donatori_GetByEmailHCI_Result)">
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Donatori_GetByIdHCI" ReturnType="Collection(BankaKrviHCIModel.bsp_Donatori_GetByIdHCI_Result)">
+            <Parameter Name="DonatorId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Donatori_GetByKrvnaGrupaIndexHCI" ReturnType="Collection(BankaKrviHCIModel.bsp_Donatori_GetByKrvnaGrupaIndexHCI_Result)">
+            <Parameter Name="kgIndex" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Donatori_InsertHCI" ReturnType="Collection(Decimal)">
+            <Parameter Name="Ime" Mode="In" Type="String" />
+            <Parameter Name="Prezime" Mode="In" Type="String" />
+            <Parameter Name="Adresa" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="DatumRodjenja" Mode="In" Type="DateTime" />
+            <Parameter Name="Telefon" Mode="In" Type="String" />
+            <Parameter Name="Spol" Mode="In" Type="String" />
+            <Parameter Name="Lozinka" Mode="In" Type="String" />
+            <Parameter Name="Aktivan" Mode="In" Type="Boolean" />
+            <Parameter Name="GradId" Mode="In" Type="Int32" />
+            <Parameter Name="KrvnaGrupa" Mode="In" Type="String" />
+            <Parameter Name="DatumRegistracije" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Donatori_UpdateDatumZadnjeDonacijeHCI">
+            <Parameter Name="DonatorId" Mode="In" Type="Int32" />
+            <Parameter Name="datum" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Donatori_UpdateHCI">
+            <Parameter Name="DonatorId" Mode="In" Type="Int32" />
+            <Parameter Name="Ime" Mode="In" Type="String" />
+            <Parameter Name="Prezime" Mode="In" Type="String" />
+            <Parameter Name="Adresa" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="DatumRodjenja" Mode="In" Type="DateTime" />
+            <Parameter Name="Telefon" Mode="In" Type="String" />
+            <Parameter Name="Spol" Mode="In" Type="String" />
+            <Parameter Name="KrvnaGrupa" Mode="In" Type="String" />
+            <Parameter Name="Lozinka" Mode="In" Type="String" />
+            <Parameter Name="GradId" Mode="In" Type="Int32" />
+            <Parameter Name="Aktivan" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Donatori_UpdateSlikeHCI">
+            <Parameter Name="DonatorId" Mode="In" Type="Int32" />
+            <Parameter Name="slika" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Gradovi_SelectAll" ReturnType="Collection(BankaKrviHCIModel.bsp_Gradovi_SelectAll_Result)" />
+          <FunctionImport Name="bsp_Stanja_SelectByCentarId" ReturnType="Collection(BankaKrviHCIModel.bsp_Stanja_SelectByCentarId_Result)">
+            <Parameter Name="TransfuzijskiCentarId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_TransfuzijskiCentri_SelectAll" ReturnType="Collection(BankaKrviHCIModel.bsp_TransfuzijskiCentri_SelectAll_Result)" />
+          <FunctionImport Name="bsp_Zahtjevi_GetByDonatorId" ReturnType="Collection(BankaKrviHCIModel.bsp_Zahtjevi_GetByDonatorId_Result)">
+            <Parameter Name="DonatorId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="bsp_Zahtjevi_InsertHCI" ReturnType="Collection(Decimal)">
+            <Parameter Name="TransfuzijskiCentarId" Mode="In" Type="Int32" />
+            <Parameter Name="DonatorId" Mode="In" Type="Int32" />
+            <Parameter Name="NazivKrvneGrupe" Mode="In" Type="String" />
+            <Parameter Name="BrojDoza" Mode="In" Type="Int32" />
+            <Parameter Name="DatumZahtjeva" Mode="In" Type="DateTime" />
+            <Parameter Name="StatusZahtjeva" Mode="In" Type="Int32" />
+            <Parameter Name="Kolicina" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="bsp_Donacije_GetByDonatorIdHCI_Result">
+          <Property Type="Int32" Name="DonacijaId" Nullable="false" />
+          <Property Type="String" Name="KrvnaGrupa" Nullable="false" MaxLength="3" />
+          <Property Type="Int32" Name="BrojDoza" Nullable="false" />
+          <Property Type="Int32" Name="Kolicina" Nullable="false" />
+          <Property Type="Boolean" Name="UspjesnoRealizovana" Nullable="false" />
+          <Property Type="String" Name="Donator" Nullable="false" MaxLength="101" />
+          <Property Type="DateTime" Name="DatumDonacije" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Centar" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Zaposlenik" Nullable="false" MaxLength="101" />
+          <Property Type="Boolean" Name="Odbijena" Nullable="false" />
+          <Property Type="String" Name="Napomena" Nullable="true" />
+          <Property Type="Int32" Name="TransfuzijskiCentarId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="bsp_Donatori_GetByEmailHCI_Result">
+          <Property Type="Int32" Name="DonatorId" Nullable="false" />
+          <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="Aktivan" Nullable="false" />
+          <Property Type="String" Name="Lozinka" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="KrvnaGrupa" Nullable="false" MaxLength="3" />
+          <Property Type="DateTime" Name="DatumZadnjeDonacije" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DatumRegistracije" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="DatumRodjenja" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Spol" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="GradId" Nullable="false" />
+          <Property Type="String" Name="Telefon" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Slika" Nullable="true" />
+          <Property Type="String" Name="Grad" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Adresa" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="bsp_Donatori_GetByIdHCI_Result">
+          <Property Type="Int32" Name="DonatorId" Nullable="false" />
+          <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Adresa" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="DatumRodjenja" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Spol" Nullable="false" MaxLength="1" />
+          <Property Type="Boolean" Name="Aktivan" Nullable="false" />
+          <Property Type="String" Name="Telefon" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="KrvnaGrupa" Nullable="false" MaxLength="3" />
+          <Property Type="DateTime" Name="DatumZadnjeDonacije" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DatumRegistracije" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="GradId" Nullable="false" />
+          <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="UkupnoDonacija" Nullable="true" />
+          <Property Type="Int32" Name="UkupnaKolicina" Nullable="false" />
+          <Property Type="Int32" Name="UkupnoDoza" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="bsp_Donatori_GetByKrvnaGrupaIndexHCI_Result">
+          <Property Type="Int32" Name="DonatorId" Nullable="false" />
+          <Property Type="String" Name="Ime" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Prezime" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="50" />
+          <Property Type="Boolean" Name="Aktivan" Nullable="false" />
+          <Property Type="String" Name="Lozinka" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="KrvnaGrupa" Nullable="false" MaxLength="3" />
+          <Property Type="DateTime" Name="DatumZadnjeDonacije" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="DatumRegistracije" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="DatumRodjenja" Nullable="false" Precision="23" />
+          <Property Type="String" Name="Spol" Nullable="false" MaxLength="1" />
+          <Property Type="Int32" Name="GradId" Nullable="false" />
+          <Property Type="String" Name="Telefon" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Slika" Nullable="true" />
+          <Property Type="String" Name="Grad" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Adresa" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="bsp_Gradovi_SelectAll_Result">
+          <Property Type="Int32" Name="GradId" Nullable="false" />
+          <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="bsp_Stanja_SelectByCentarId_Result">
+          <Property Type="Int32" Name="StanjeId" Nullable="false" />
+          <Property Type="String" Name="KrvnaGrupa" Nullable="false" MaxLength="3" />
+          <Property Type="Int32" Name="Kolicina" Nullable="false" />
+          <Property Type="Int32" Name="TransfuzijskiCentarId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="bsp_TransfuzijskiCentri_SelectAll_Result">
+          <Property Type="Int32" Name="TransfuzijskiCentarId" Nullable="false" />
+          <Property Type="String" Name="Naziv" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="bsp_Zahtjevi_GetByDonatorId_Result">
+          <Property Type="Int32" Name="ZahtjevZaKrvId" Nullable="false" />
+          <Property Type="Int32" Name="TransfuzijskiCentarId" Nullable="true" />
+          <Property Type="String" Name="TransfuzijskiCentar" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="DonatorId" Nullable="true" />
+          <Property Type="Int32" Name="Kolicina" Nullable="false" />
+          <Property Type="String" Name="Ime" Nullable="false" MaxLength="101" />
+          <Property Type="String" Name="NazivKrvneGrupe" Nullable="false" MaxLength="3" />
+          <Property Type="Int32" Name="BrojDoza" Nullable="false" />
+          <Property Type="DateTime" Name="DatumZahtjeva" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="KorisnikId" Nullable="true" />
+          <Property Type="String" Name="Zaposlenik" Nullable="false" MaxLength="101" />
+          <Property Type="Int32" Name="StatusZahtjevaId" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BankaKrviHCIModelStoreContainer" CdmEntityContainer="BankaKrviHCIEntities">
+          <EntitySetMapping Name="CentriKorisnici">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.CentriKorisnici">
+              <MappingFragment StoreEntitySet="CentriKorisnici">
+                <ScalarProperty Name="CentarKorisnikId" ColumnName="CentarKorisnikId" />
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+                <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donacije">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Donacije">
+              <MappingFragment StoreEntitySet="Donacije">
+                <ScalarProperty Name="DonacijaId" ColumnName="DonacijaId" />
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+                <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+                <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+                <ScalarProperty Name="DatumDonacije" ColumnName="DatumDonacije" />
+                <ScalarProperty Name="BrojDoza" ColumnName="BrojDoza" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="UspjesnoRealizovana" ColumnName="UspjesnoRealizovana" />
+                <ScalarProperty Name="Odbijena" ColumnName="Odbijena" />
+                <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Donatori">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Donatori">
+              <MappingFragment StoreEntitySet="Donatori">
+                <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Spol" ColumnName="Spol" />
+                <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+                <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+                <ScalarProperty Name="DatumZadnjeDonacije" ColumnName="DatumZadnjeDonacije" />
+                <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+                <ScalarProperty Name="Slika" ColumnName="Slika" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drzave">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Drzave">
+              <MappingFragment StoreEntitySet="Drzave">
+                <ScalarProperty Name="DrzavaId" ColumnName="DrzavaId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gradovi">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Gradovi">
+              <MappingFragment StoreEntitySet="Gradovi">
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="DrzavaId" ColumnName="DrzavaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Institucije">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Institucije">
+              <MappingFragment StoreEntitySet="Institucije">
+                <ScalarProperty Name="InstitucijaId" ColumnName="InstitucijaId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+                <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+                <ScalarProperty Name="LozinkaHash" ColumnName="LozinkaHash" />
+                <ScalarProperty Name="LozinkaSalt" ColumnName="LozinkaSalt" />
+                <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Korisnici">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Korisnici">
+              <MappingFragment StoreEntitySet="Korisnici">
+                <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="DatumZaposlenja" ColumnName="DatumZaposlenja" />
+                <ScalarProperty Name="Spol" ColumnName="Spol" />
+                <ScalarProperty Name="KorisnickoIme" ColumnName="KorisnickoIme" />
+                <ScalarProperty Name="LozinkaHash" ColumnName="LozinkaHash" />
+                <ScalarProperty Name="LozinkaSalt" ColumnName="LozinkaSalt" />
+                <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KorisnickeUloge">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.KorisnickeUloge">
+              <MappingFragment StoreEntitySet="KorisnickeUloge">
+                <ScalarProperty Name="KorisnickaUlogaId" ColumnName="KorisnickaUlogaId" />
+                <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+                <ScalarProperty Name="UlogaId" ColumnName="UlogaId" />
+                <ScalarProperty Name="DatumIzmjene" ColumnName="DatumIzmjene" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obavjestenja">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Obavjestenja">
+              <MappingFragment StoreEntitySet="Obavjestenja">
+                <ScalarProperty Name="ObavjestenjeId" ColumnName="ObavjestenjeId" />
+                <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+                <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+                <ScalarProperty Name="DatumObjave" ColumnName="DatumObjave" />
+                <ScalarProperty Name="Naslov" ColumnName="Naslov" />
+                <ScalarProperty Name="Sadrzaj" ColumnName="Sadrzaj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stanja">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Stanja">
+              <MappingFragment StoreEntitySet="Stanja">
+                <ScalarProperty Name="StanjeId" ColumnName="StanjeId" />
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+                <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusZahtjeva">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.StatusZahtjeva">
+              <MappingFragment StoreEntitySet="StatusZahtjeva">
+                <ScalarProperty Name="StatusZahtjevaId" ColumnName="StatusZahtjevaId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TransfuzijskiCentri">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.TransfuzijskiCentri">
+              <MappingFragment StoreEntitySet="TransfuzijskiCentri">
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+                <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uloge">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.Uloge">
+              <MappingFragment StoreEntitySet="Uloge">
+                <ScalarProperty Name="UlogaId" ColumnName="UlogaId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZahtjevZaKrv">
+            <EntityTypeMapping TypeName="BankaKrviHCIModel.ZahtjevZaKrv">
+              <MappingFragment StoreEntitySet="ZahtjevZaKrv">
+                <ScalarProperty Name="ZahtjevZaKrvId" ColumnName="ZahtjevZaKrvId" />
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+                <ScalarProperty Name="InstitucijaId" ColumnName="InstitucijaId" />
+                <ScalarProperty Name="NazivKrvneGrupe" ColumnName="NazivKrvneGrupe" />
+                <ScalarProperty Name="BrojDoza" ColumnName="BrojDoza" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="DatumZahtjeva" ColumnName="DatumZahtjeva" />
+                <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+                <ScalarProperty Name="StatusZahtjevaId" ColumnName="StatusZahtjevaId" />
+                <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="bsp_Donacije_GetByDonatorIdHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donacije_GetByDonatorIdHCI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Donacije_GetByDonatorIdHCI_Result">
+                <ScalarProperty Name="DonacijaId" ColumnName="DonacijaId" />
+                <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+                <ScalarProperty Name="BrojDoza" ColumnName="BrojDoza" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="UspjesnoRealizovana" ColumnName="UspjesnoRealizovana" />
+                <ScalarProperty Name="Donator" ColumnName="Donator" />
+                <ScalarProperty Name="DatumDonacije" ColumnName="DatumDonacije" />
+                <ScalarProperty Name="Centar" ColumnName="Centar" />
+                <ScalarProperty Name="Zaposlenik" ColumnName="Zaposlenik" />
+                <ScalarProperty Name="Odbijena" ColumnName="Odbijena" />
+                <ScalarProperty Name="Napomena" ColumnName="Napomena" />
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="bsp_Donacije_InsertHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donacije_InsertHCI" />
+          <FunctionImportMapping FunctionImportName="bsp_Donatori_GetByEmailHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_GetByEmailHCI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Donatori_GetByEmailHCI_Result">
+                <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+                <ScalarProperty Name="DatumZadnjeDonacije" ColumnName="DatumZadnjeDonacije" />
+                <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+                <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+                <ScalarProperty Name="Spol" ColumnName="Spol" />
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Slika" ColumnName="Slika" />
+                <ScalarProperty Name="Grad" ColumnName="Grad" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="bsp_Donatori_GetByIdHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_GetByIdHCI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Donatori_GetByIdHCI_Result">
+                <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+                <ScalarProperty Name="Spol" ColumnName="Spol" />
+                <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+                <ScalarProperty Name="DatumZadnjeDonacije" ColumnName="DatumZadnjeDonacije" />
+                <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="UkupnoDonacija" ColumnName="UkupnoDonacija" />
+                <ScalarProperty Name="UkupnaKolicina" ColumnName="UkupnaKolicina" />
+                <ScalarProperty Name="UkupnoDoza" ColumnName="UkupnoDoza" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="bsp_Donatori_GetByKrvnaGrupaIndexHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_GetByKrvnaGrupaIndexHCI">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Donatori_GetByKrvnaGrupaIndexHCI_Result">
+                <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="Prezime" ColumnName="Prezime" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Aktivan" ColumnName="Aktivan" />
+                <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
+                <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+                <ScalarProperty Name="DatumZadnjeDonacije" ColumnName="DatumZadnjeDonacije" />
+                <ScalarProperty Name="DatumRegistracije" ColumnName="DatumRegistracije" />
+                <ScalarProperty Name="DatumRodjenja" ColumnName="DatumRodjenja" />
+                <ScalarProperty Name="Spol" ColumnName="Spol" />
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Slika" ColumnName="Slika" />
+                <ScalarProperty Name="Grad" ColumnName="Grad" />
+                <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="bsp_Donatori_InsertHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_InsertHCI" />
+          <FunctionImportMapping FunctionImportName="bsp_Donatori_UpdateDatumZadnjeDonacijeHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_UpdateDatumZadnjeDonacijeHCI" />
+          <FunctionImportMapping FunctionImportName="bsp_Donatori_UpdateHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_UpdateHCI" />
+          <FunctionImportMapping FunctionImportName="bsp_Donatori_UpdateSlikeHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Donatori_UpdateSlikeHCI" />
+          <FunctionImportMapping FunctionImportName="bsp_Gradovi_SelectAll" FunctionName="BankaKrviHCIModel.Store.bsp_Gradovi_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Gradovi_SelectAll_Result">
+                <ScalarProperty Name="GradId" ColumnName="GradId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="bsp_Stanja_SelectByCentarId" FunctionName="BankaKrviHCIModel.Store.bsp_Stanja_SelectByCentarId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Stanja_SelectByCentarId_Result">
+                <ScalarProperty Name="StanjeId" ColumnName="StanjeId" />
+                <ScalarProperty Name="KrvnaGrupa" ColumnName="KrvnaGrupa" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="bsp_TransfuzijskiCentri_SelectAll" FunctionName="BankaKrviHCIModel.Store.bsp_TransfuzijskiCentri_SelectAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_TransfuzijskiCentri_SelectAll_Result">
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="bsp_Zahtjevi_GetByDonatorId" FunctionName="BankaKrviHCIModel.Store.bsp_Zahtjevi_GetByDonatorId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BankaKrviHCIModel.bsp_Zahtjevi_GetByDonatorId_Result">
+                <ScalarProperty Name="ZahtjevZaKrvId" ColumnName="ZahtjevZaKrvId" />
+                <ScalarProperty Name="TransfuzijskiCentarId" ColumnName="TransfuzijskiCentarId" />
+                <ScalarProperty Name="TransfuzijskiCentar" ColumnName="TransfuzijskiCentar" />
+                <ScalarProperty Name="DonatorId" ColumnName="DonatorId" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+                <ScalarProperty Name="Ime" ColumnName="Ime" />
+                <ScalarProperty Name="NazivKrvneGrupe" ColumnName="NazivKrvneGrupe" />
+                <ScalarProperty Name="BrojDoza" ColumnName="BrojDoza" />
+                <ScalarProperty Name="DatumZahtjeva" ColumnName="DatumZahtjeva" />
+                <ScalarProperty Name="KorisnikId" ColumnName="KorisnikId" />
+                <ScalarProperty Name="Zaposlenik" ColumnName="Zaposlenik" />
+                <ScalarProperty Name="StatusZahtjevaId" ColumnName="StatusZahtjevaId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="bsp_Zahtjevi_InsertHCI" FunctionName="BankaKrviHCIModel.Store.bsp_Zahtjevi_InsertHCI" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
